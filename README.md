@@ -1,229 +1,89 @@
-
+<div align="center">
 
 # PyOS
 
-PyOS is a toy operating system simulation built in Python. It provides a command-line environment with user authentication, a virtual filesystem, permissions, process management, scheduling, services, networking, package management, configuration, logging, and automated tests.
+**A modular operating-system simulation built in Python**
+
+![Python](https://img.shields.io/badge/python-3.9%2B-blue)
+![License](https://img.shields.io/badge/license-educational-lightgrey)
+![Tests](https://img.shields.io/badge/tests-10%20passing-brightgreen)
+![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux-informational)
+
+</div>
+
+PyOS is an educational, command-line operating-system simulation written in Python. It combines user authentication, a virtual filesystem with permissions, a feature-rich shell, process and job control, a scheduler, a service manager, simulated networking, a package manager, configuration, logging, and an automated test suite.
+
+> **Note:** PyOS runs as a normal Python application. It is a learning tool, not a real kernel, and does not provide real operating-system security.
+
+---
+
+## Table of Contents
+
+- [Features](#features)
+- [Quick Start](#quick-start)
+- [Usage](#usage)
+- [Command Reference](#command-reference)
+- [Project Structure](#project-structure)
+- [Data Storage](#data-storage)
+- [Testing](#testing)
+- [Security](#security)
+- [Limitations](#limitations)
+- [Roadmap](#roadmap)
+- [License](#license)
+
+---
 
 ## Features
 
-### Authentication
-- User login system
-- Administrator and standard-user accounts
-- Bcrypt password hashing
-- User creation and management
+| Area | Highlights |
+|------|-----------|
+| **Authentication** | Login system, administrator and standard accounts, bcrypt password hashing, user creation and management |
+| **Virtual Filesystem** | Per-user home directories, `pwd` `ls` `cd` `touch` `cat` `write` `mkdir` `rm`, `stat` metadata, `chmod` permissions, user isolation |
+| **Shell** | Command history, environment variables, pipes, redirection (`>`, `>>`), `&&` / `||`, command substitution `$()`, background jobs (`&`), `jobs` / `fg` / `bg`, `grep` |
+| **Process Management** | `ps`, `start`, `kill`, process ownership, protected shell process, running/terminated states |
+| **Networking** | `hostname`, `ping`, `ifconfig`, `netstat`, pipe-compatible output |
+| **Package Manager** | `pkg list/installed/install/remove/info`, admin-only install/remove, persistent package database |
+| **Scheduler** | Create, view, run and manage scheduled tasks |
+| **Service Manager** | List, check status, start, stop and restart services |
+| **Configuration** | View, get, set and reset configuration values |
+| **Logging** | System activity log covering user, package, task and configuration events |
+| **System Info** | OS/PyOS version, kernel, user, hostname, architecture, Python version, CPU cores, disk usage, time, uptime |
+| **Boot System** | Simulated boot sequence initializing all subsystems |
 
-### Virtual Filesystem
-- Home directories for users
-- `pwd`, `ls`, `cd`
-- File creation and deletion
-- `touch`, `cat`, `write`
-- Directory creation and removal
-- File metadata with `stat`
-- Permission management with `chmod`
-- User-based filesystem isolation
+**Simulated packages:** `calculator`, `editor`, `browser`, `terminal`
 
-### Shell
-- Interactive PyOS shell
-- Command history
-- Environment variables
-- Pipes
-- Output redirection with `>` and `>>`
-- `&&` and `||`
-- Command substitution with `$()`
-- Background processes with `&`
-- Job control with `jobs`, `fg`, and `bg`
-- `grep`
+---
 
-### Process Management
-- `ps`
-- `start`
-- `kill`
-- Process ownership
-- Shell protection
-- Running/terminated process states
+## Quick Start
 
-### Networking
-- `hostname`
-- `ping`
-- `ifconfig`
-- `netstat`
-- Network command piping
+### Prerequisites
 
-### Package Manager
-- `pkg list`
-- `pkg installed`
-- `pkg install <package>`
-- `pkg remove <package>`
-- `pkg info <package>`
-- Administrator-only package installation/removal
-- Persistent package database
+- Python 3.9 or newer
+- `pip`
 
-Available simulated packages include:
-- calculator
-- editor
-- browser
-- terminal
-
-### Scheduler
-- Create scheduled tasks
-- View scheduled tasks
-- Run and manage scheduled jobs
-
-### Service Manager
-- List services
-- Check service status
-- Start and stop services
-- Restart services
-
-### Configuration
-- View configuration
-- Get individual configuration values
-- Change configuration values
-- Reset configuration
-
-Example:
-```text
-config list
-config get hostname
-config set hostname my-pyos
-config reset
-```
-
-### Logging
-- System activity logging
-- View logs
-- Clear logs
-- Logs include actions such as user creation, package installation, task creation, and configuration changes
-
-Example:
-```text
-log show
-log clear
-```
-
-### System Information
-PyOS provides system information such as:
-- OS and PyOS version
-- Kernel
-- Current user
-- Hostname
-- Architecture
-- Python version
-- CPU cores
-- Disk usage
-- Current time
-- Uptime
-
-### Boot System
-PyOS includes a simulated boot sequence that initializes:
-- Filesystem
-- Database
-- Configuration
-- Process manager
-- Service manager
-- Scheduler
-- Logger
-- Network subsystem
-
-## Project Structure
-
-```text
-PyOS/
-│
-├── pyos.py
-├── requirements.txt
-├── README.md
-│
-├── Filesystem/
-│   └── home/
-│       └── <users>
-│
-├── System/
-│   ├── auth/
-│   │   ├── __init__.py
-│   │   ├── login.py
-│   │   └── passwords.py
-│   │
-│   ├── core/
-│   │   ├── __init__.py
-│   │   ├── boot.py
-│   │   ├── config_manager.py
-│   │   ├── database.py
-│   │   ├── environment.py
-│   │   ├── filesystem.py
-│   │   ├── history.py
-│   │   ├── logger.py
-│   │   ├── package_manager.py
-│   │   ├── process.py
-│   │   ├── scheduler.py
-│   │   ├── service_manager.py
-│   │   ├── shell.py
-│   │   ├── system.py
-│   │   ├── system_info.py
-│   │   └── user_manager.py
-│   │
-│   └── data/
-│       ├── pyos.db
-│       ├── packages.json
-│       ├── history/
-│       └── environment/
-│
-├── tests/
-│   └── test_pyos.py
-│
-└── .venv/
-```
-
-## Requirements
-
-- Python 3.9+
-- `bcrypt`
-
-The project uses:
-
-```text
-bcrypt==5.0.0
-```
-
-## Installation
-
-Clone or open the project directory:
+### Installation
 
 ```bash
+# Clone or open the project directory
 cd PyOS
-```
 
-Create a virtual environment:
-
-```bash
+# Create and activate a virtual environment (macOS / Linux)
 python3 -m venv .venv
-```
-
-Activate it:
-
-### macOS / Linux
-
-```bash
 source .venv/bin/activate
-```
 
-Install dependencies:
-
-```bash
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-## Running PyOS
+Dependency: `bcrypt==5.0.0`
 
-Start the operating system with:
+### Run
 
 ```bash
 python pyos.py
 ```
 
-You should see the PyOS boot sequence followed by the login manager.
-
-Example:
+You will see the boot sequence, followed by the login manager:
 
 ```text
 ================================
@@ -244,27 +104,60 @@ Boot completed successfully.
 Starting login manager...
 ```
 
-## Login
+---
 
-After boot, enter your username and password.
+## Usage
 
-Example:
+### Login
 
 ```text
 Username: root
 Password:
-```
 
-After successful authentication:
-
-```text
 Login successful!
 
 Welcome to PyOS, root!
 Account type: Administrator
 ```
 
-## Example Commands
+### Example Session
+
+```text
+root@PyOS:/home/root$ touch test.txt
+File created.
+
+root@PyOS:/home/root$ write test.txt Hello
+File written.
+
+root@PyOS:/home/root$ cat test.txt
+Hello
+
+root@PyOS:/home/root$ stat test.txt
+
+================================
+        File Metadata
+================================
+
+Name:        test.txt
+Type:        FILE
+Size:        5 bytes
+Owner:       root
+Permissions: 644
+Path:        /.../Filesystem/home/root/test.txt
+
+root@PyOS:/home/root$ pkg list
+
+PACKAGE        VERSION   DESCRIPTION
+-------------------------------------------------------------
+calculator     1.0       Simple calculator application
+editor         1.0       Basic text editor application
+browser        1.0       Basic web browser application
+terminal       1.0       Terminal application
+```
+
+---
+
+## Command Reference
 
 ### Filesystem
 
@@ -287,24 +180,20 @@ chmod 644 test.txt
 chmod 400 test.txt
 ```
 
-### Processes
+### Processes and Jobs
 
 ```text
 ps
 start editor
 kill 2
-```
 
-### Jobs
-
-```text
 start editor &
 jobs
 fg 2
 bg 2
 ```
 
-### Environment
+### Environment Variables
 
 ```text
 set NAME Tanishqa
@@ -381,19 +270,76 @@ history 5
 clearhistory
 ```
 
-## Testing
+---
 
-PyOS includes a unit-test suite.
+## Project Structure
 
-Compile the tests:
-
-```bash
-python -m py_compile tests/test_pyos.py
+```text
+PyOS/
+├── pyos.py                  # Main entry point
+├── requirements.txt
+├── README.md
+│
+├── Filesystem/
+│   └── home/
+│       └── <users>
+│
+├── System/
+│   ├── auth/
+│   │   ├── login.py
+│   │   └── passwords.py
+│   │
+│   ├── core/
+│   │   ├── boot.py
+│   │   ├── config_manager.py
+│   │   ├── database.py
+│   │   ├── environment.py
+│   │   ├── filesystem.py
+│   │   ├── history.py
+│   │   ├── logger.py
+│   │   ├── package_manager.py
+│   │   ├── process.py
+│   │   ├── scheduler.py
+│   │   ├── service_manager.py
+│   │   ├── shell.py         # Main shell implementation
+│   │   ├── system.py
+│   │   ├── system_info.py
+│   │   └── user_manager.py
+│   │
+│   └── data/
+│       ├── pyos.db
+│       ├── packages.json
+│       ├── history/
+│       └── environment/
+│
+└── tests/
+    └── test_pyos.py
 ```
 
-Run all tests:
+Each subsystem lives in its own module so it can be developed and tested independently.
+
+---
+
+## Data Storage
+
+Persistent data is stored in `System/data/`:
+
+| File | Purpose |
+|------|---------|
+| `pyos.db` | SQLite database holding user information |
+| `packages.json` | Package database |
+| `history/<username>.json` | Per-user command history |
+| `environment/<username>.json` | Per-user environment variables |
+
+---
+
+## Testing
 
 ```bash
+# Compile check
+python -m py_compile tests/test_pyos.py
+
+# Run the full suite
 python -m unittest discover tests -v
 ```
 
@@ -405,126 +351,45 @@ Ran 10 tests
 OK
 ```
 
-The tests currently cover:
-- Database initialization
-- User creation
-- Environment variables
-- Filesystem directory creation
-- Filesystem file creation
-- File writing
-- Package availability
-- Process creation
-- Process termination
-- Protection of the shell process
+**Coverage:** database initialization, user creation, environment variables, directory and file creation, file writing, package availability, process creation and termination, and shell-process protection.
+
+---
 
 ## Security
 
-PyOS includes several simulated security features:
+PyOS simulates several security concepts for educational purposes:
 
 - Bcrypt password hashing
-- User roles
-- Administrator privileges
-- Filesystem ownership
-- Permission modes
-- User home-directory isolation
+- User roles and administrator privileges
+- Filesystem ownership and permission modes
+- Home-directory isolation
 - Protected shell process
 - Administrator-only package operations
 
-This is an educational operating-system simulation and is not intended to provide real operating-system security.
+These are not intended to provide real operating-system security.
 
-## Data Storage
-
-Persistent PyOS data is stored inside:
-
-```text
-System/data/
-```
-
-Important files include:
-
-```text
-pyos.db
-packages.json
-history/<username>.json
-environment/<username>.json
-```
-
-The SQLite database stores user information, while JSON files store package, command-history, and environment-variable data.
-
-## Example Session
-
-```text
-root@PyOS:/home/root$ touch test.txt
-File created.
-
-root@PyOS:/home/root$ write test.txt Hello
-File written.
-
-root@PyOS:/home/root$ cat test.txt
-Hello
-
-root@PyOS:/home/root$ stat test.txt
-
-================================
-        File Metadata
-================================
-
-Name:        test.txt
-Type:        FILE
-Size:        5 bytes
-Owner:       root
-Permissions: 644
-Path:        /.../Filesystem/home/root/test.txt
-
-root@PyOS:/home/root$ pkg list
-
-PACKAGE        VERSION   DESCRIPTION
--------------------------------------------------------------
-calculator     1.0       Simple calculator application
-editor         1.0       Basic text editor application
-browser        1.0       Basic web browser application
-terminal       1.0       Terminal application
-```
-
-## Development
-
-PyOS is designed as a modular educational project. Core operating-system functionality is separated into modules so that individual subsystems can be developed and tested independently.
-
-Main entry point:
-
-```text
-pyos.py
-```
-
-Main shell implementation:
-
-```text
-System/core/shell.py
-```
+---
 
 ## Limitations
 
-PyOS is a simulation running as a normal Python application. It does not replace the host operating system kernel and does not directly manage real hardware, CPU scheduling, memory protection, or physical devices.
+PyOS is a simulation running as a normal Python application. It does not replace the host kernel and does not manage real hardware, CPU scheduling, memory protection, or physical devices. Networking, processes, packages, services, and scheduling are all simulated at the application level.
 
-Several components, including networking, processes, packages, services, and scheduling, are simulated at the application level.
+---
 
-## Future Improvements
+## Roadmap
 
-Possible future extensions include:
+- [ ] Virtual kernel architecture
+- [ ] Improved process scheduling
+- [ ] Memory management simulation
+- [ ] Device management
+- [ ] Additional shell utilities and better command parsing
+- [ ] Expanded service management with boot-time dependencies
+- [ ] User and group permissions
+- [ ] Configuration files
+- [ ] More realistic networking simulation
+- [ ] Broader automated test coverage and documentation
 
-- More complete virtual kernel architecture
-- Improved process scheduling
-- Memory management simulation
-- Device management
-- More shell utilities
-- Better command parsing
-- Expanded service management
-- More extensive automated testing
-- Improved documentation
-- User and group permissions
-- Configuration files
-- Boot-time service dependencies
-- More realistic networking simulation
+---
 
 ## License
 
