@@ -1,0 +1,42 @@
+{"time": "2026-10-12 12:42:24", "user": "root", "action": "CONFIG_SET", "details": "hostname final-pyos"}
+{"time": "2026-10-12 12:42:37", "user": "root", "action": "CONFIG_RESET", "details": ""}
+{"time": "2026-10-12 12:49:32", "user": "root", "action": "FILE_CREATE", "details": "stat_test.txt"}
+{"time": "2026-10-12 12:49:35", "user": "root", "action": "FILE_WRITE", "details": "stat_test.txt Hello"}
+{"time": "2026-10-12 12:53:14", "user": "root", "action": "FILE_WRITE", "details": "stat_test.txt Hello"}
+{"time": "2026-10-12 13:03:41", "user": "root", "action": "FILE_CREATE", "details": "stat_test2.txt"}
+{"time": "2026-10-12 13:03:45", "user": "root", "action": "FILE_WRITE", "details": "stat_test2.txt Hello"}
+{"time": "2026-10-12 13:14:28", "user": "root", "action": "FILE_CREATE", "details": "final.txt"}
+{"time": "2026-10-12 13:14:34", "user": "root", "action": "FILE_WRITE", "details": "final.txt Hello"}
+{"time": "2026-10-12 13:14:48", "user": "root", "action": "DIRECTORY_CREATE", "details": "testdir"}
+{"time": "2026-10-12 13:15:03", "user": "root", "action": "DIRECTORY_REMOVE", "details": "testdir"}
+{"time": "2026-10-12 13:15:08", "user": "root", "action": "PERMISSION_CHANGE", "details": "400 final.txt"}
+{"time": "2026-10-12 13:15:12", "user": "root", "action": "FILE_WRITE", "details": "final.txt Test"}
+{"time": "2026-10-12 13:15:22", "user": "root", "action": "PROCESS_START", "details": "editor"}
+{"time": "2026-10-12 13:15:31", "user": "root", "action": "PROCESS_KILL", "details": "2"}
+{"time": "2026-10-12 13:15:56", "user": "root", "action": "SERVICE_START", "details": "network"}
+{"time": "2026-10-12 13:16:00", "user": "root", "action": "SERVICE_RESTART", "details": "network"}
+{"time": "2026-10-12 13:16:25", "user": "root", "action": "TASK_CREATE", "details": "test 10"}
+{"time": "2026-10-12 13:16:59", "user": "root", "action": "CONFIG_SET", "details": "hostname test-pyos"}
+{"time": "2026-10-12 13:30:49", "user": "root", "action": "DIRECTORY_CREATE", "details": "testdir"}
+{"time": "2026-10-12 13:32:01", "user": "root", "action": "FILE_CREATE", "details": "final_test.txt"}
+{"time": "2026-10-12 13:32:04", "user": "root", "action": "FILE_WRITE", "details": "final_test.txt Hello-PyOS"}
+{"time": "2026-10-12 13:32:16", "user": "root", "action": "PERMISSION_CHANGE", "details": "400 final_test.txt"}
+{"time": "2026-10-12 13:32:24", "user": "root", "action": "FILE_WRITE", "details": "final_test.txt Changed"}
+{"time": "2026-10-12 13:32:27", "user": "root", "action": "PERMISSION_CHANGE", "details": "644 final_test.txt"}
+{"time": "2026-10-12 13:33:02", "user": "root", "action": "PROCESS_START", "details": "editor"}
+{"time": "2026-10-12 13:33:07", "user": "root", "action": "PROCESS_KILL", "details": "2"}
+{"time": "2026-10-12 13:33:17", "user": "root", "action": "TASK_CREATE", "details": "test 5"}
+{"time": "2026-10-12 13:33:24", "user": "root", "action": "TASK_REMOVE", "details": "1"}
+{"time": "2026-10-12 13:33:44", "user": "root", "action": "SERVICE_START", "details": "logger"}
+{"time": "2026-10-12 13:40:19", "user": "root", "action": "DIRECTORY_CREATE", "details": "demo"}
+{"time": "2026-10-12 13:40:25", "user": "root", "action": "FILE_CREATE", "details": "test.txt"}
+{"time": "2026-10-12 13:40:29", "user": "root", "action": "FILE_WRITE", "details": "test.txt Hello"}
+{"time": "2026-10-12 13:40:48", "user": "root", "action": "PROCESS_START", "details": "editor"}
+{"time": "2026-10-12 13:44:53", "user": "root", "action": "SERVICE_START", "details": "scheduler"}
+{"time": "2026-10-12 13:45:00", "user": "root", "action": "SERVICE_STOP", "details": "scheduler"}
+{"time": "2026-10-12 13:45:07", "user": "root", "action": "SERVICE_RESTART", "details": "scheduler"}
+{"time": "2026-10-12 13:50:28", "user": "root", "action": "SERVICE_START", "details": "scheduler"}
+{"time": "2026-10-12 13:50:36", "user": "root", "action": "SERVICE_STOP", "details": "scheduler"}
+{"time": "2026-10-12 13:50:43", "user": "root", "action": "SERVICE_RESTART", "details": "scheduler"}
+{"time": "2026-10-12 14:05:34", "user": "root", "action": "TASK_CREATE", "details": "test 10"}
+{"time": "2026-10-12 14:06:28", "user": "root", "action": "TASK_CREATE", "details": "test 10"}

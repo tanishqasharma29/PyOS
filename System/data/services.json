@@ -1,0 +1,18 @@
+{
+    "network": {
+        "description": "PyOS network service",
+        "status": "RUNNING"
+    },
+    "database": {
+        "description": "PyOS database service",
+        "status": "RUNNING"
+    },
+    "logger": {
+        "description": "PyOS logging service",
+        "status": "RUNNING"
+    },
+    "scheduler": {
+        "description": "PyOS task scheduler",
+        "status": "STOPPED"
+    }
+}

@@ -1,0 +1,15 @@
+[
+    "exit",
+    "pwd",
+    "mkdir test",
+    "cd test",
+    "touch file.txt",
+    "write file.txt hello",
+    "cat file.txt",
+    "permissions file.txt",
+    "chmod 400 file.txt",
+    "permissions file.txt",
+    "write file.txt changed",
+    "cat file.txt",
+    "exit"
+]

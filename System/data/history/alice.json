@@ -1,0 +1,5 @@
+[
+    "cd /home/testuser",
+    "ls /home/testuser",
+    "exit"
+]

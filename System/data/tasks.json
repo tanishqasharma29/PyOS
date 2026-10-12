@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "hello",
+        "command": "echo Hello_PyOS",
+        "user": "root",
+        "status": "COMPLETED",
+        "created": "2026-10-12 13:59:10",
+        "last_run": "2026-10-12 13:59:22",
+        "scheduled_after": null
+    },
+    {
+        "id": 2,
+        "name": "test",
+        "command": "echo Cancelled_Task",
+        "user": "root",
+        "status": "PENDING",
+        "created": "2026-10-12 13:59:46",
+        "last_run": null,
+        "scheduled_after": null
+    }
+]

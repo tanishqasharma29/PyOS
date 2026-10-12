@@ -1,0 +1,8 @@
+{
+    "hostname": "test-pyos",
+    "version": "1.0",
+    "kernel": "PyOS Kernel 1.0",
+    "default_shell": "PyOS Shell",
+    "language": "Python",
+    "timezone": "IST"
+}

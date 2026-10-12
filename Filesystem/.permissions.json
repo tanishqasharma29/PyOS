@@ -1,0 +1,98 @@
+{
+    "home/root": {
+        "owner": "root",
+        "mode": 755
+    },
+    "home/root/test": {
+        "owner": "root",
+        "mode": 755
+    },
+    "home/root/test/hello.txt": {
+        "owner": "root",
+        "mode": 644
+    },
+    "home/root/secret.txt": {
+        "owner": "root",
+        "mode": 600
+    },
+    "home/alice": {
+        "owner": "alice",
+        "mode": 755
+    },
+    "home/alice/alice.txt": {
+        "owner": "alice",
+        "mode": 644
+    },
+    "home/alice/projects": {
+        "owner": "alice",
+        "mode": 755
+    },
+    "home/alice/projects/test.txt": {
+        "owner": "alice",
+        "mode": 644
+    },
+    "home/bob": {
+        "owner": "bob",
+        "mode": 755
+    },
+    "home/root/admin.txt": {
+        "owner": "root",
+        "mode": 0
+    },
+    "home/testuser": {
+        "owner": "testuser",
+        "mode": 755
+    },
+    "home/testuser/test": {
+        "owner": "testuser",
+        "mode": 755
+    },
+    "home/testuser/test/file.txt": {
+        "owner": "testuser",
+        "mode": 400
+    },
+    "home/root/test.txt": {
+        "owner": "root",
+        "mode": 644
+    },
+    "home/root/greeting.txt": {
+        "owner": "root",
+        "mode": 644
+    },
+    "home/root/result.txt": {
+        "owner": "root",
+        "mode": 644
+    },
+    "home/root/stat_test.txt": {
+        "owner": "root",
+        "mode": 644
+    },
+    "home/root/stat_test2.txt": {
+        "owner": "root",
+        "mode": 644
+    },
+    "home/root/final.txt": {
+        "owner": "root",
+        "mode": 400
+    },
+    "home/root/output.txt": {
+        "owner": "root",
+        "mode": 644
+    },
+    "home/root/testdir": {
+        "owner": "root",
+        "mode": 755
+    },
+    "home/root/final_test.txt": {
+        "owner": "root",
+        "mode": 644
+    },
+    "home/root/demo": {
+        "owner": "root",
+        "mode": 755
+    },
+    "home/root/demo/test.txt": {
+        "owner": "root",
+        "mode": 644
+    }
+}
