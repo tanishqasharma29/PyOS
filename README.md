@@ -10,7 +10,18 @@
 ![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux-informational)
 
 </div>
+<h1 align="center">
+  <img src="logo.png" alt="PyOS Logo" height="50%" width="50%">
+  <br>
+  <br>
+  PyOS
+  <br>
+</h1>
 
+<h4 align="center">
+  A Python-based operating system simulator with authentication,
+  filesystem management, processes, services, tasks, and scheduling.
+</h4>
 PyOS is an educational, command-line operating-system simulation written in Python. It combines user authentication, a virtual filesystem with permissions, a feature-rich shell, process and job control, a scheduler, a service manager, simulated networking, a package manager, configuration, logging, and an automated test suite.
 
 > **Note:** PyOS runs as a normal Python application. It is a learning tool, not a real kernel, and does not provide real operating-system security.
